@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212; /* Dark background */
+            color: #ffffff; /* Light text */
+            padding: 20px;
+            margin: 0;
+        }
+
+        .payment-container {
+            background-color: #1e1e1e; /* Dark container */
+            padding: 20px;
+            max-width: 400px;
+            margin: 0 auto;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Dark shadow */
+        }
+
+        h2 {
+            text-align: center;
+            color: #4CAF50; /* Green text for heading */
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #ffffff; /* Light label text */
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #444444; /* Dark border */
+            border-radius: 5px;
+            background-color: #333333; /* Dark input field */
+            color: #ffffff; /* White text inside input */
+            font-size: 16px;
+        }
+
+        .form-group input:focus {
+            border-color: #4CAF50; /* Green border on focus */
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50; /* Green button */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-container">
+        <h2>Booking Event</h2>
+        <form id="payment-form" method="post">
+            <div class="form-group">
+                <label for="card-number">Card Number</label>
+                <input type="text" id="card-number" name="card_number" placeholder="1234 5678 9012 3456" required>
+            </div>
+            <div class="form-group">
+                <label for="expiry-date">Expiry Date</label>
+                <input type="text" id="expiry-date" name="expiry_date" placeholder="MM/YY" required>
+            </div>
+            <div class="form-group">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="123" required>
+            </div>
+            <button type="submit" class="submit-btn">Pay Now</button>
+        </form>
+    </div>
+
+    <script>
+        // JavaScript to handle the form submission
+        document.getElementById('payment-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting traditionally
+
+            // Redirect directly to the booking confirmation page
+            window.location.href = "booking_confirmation.php"; // Redirect immediately
+        });
+    </script>
+</body>
+</html>
